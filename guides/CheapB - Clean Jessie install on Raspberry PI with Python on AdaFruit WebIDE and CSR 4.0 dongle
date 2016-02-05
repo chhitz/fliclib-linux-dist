@@ -20,25 +20,17 @@ update all system packages:
 sudo apt-get update
 
 update all installed packages:
-sudo apt-get upgrade
+sudo apt-get dist-upgrade
 
 this will take a while
 optional: clean out installation files:
 sudo apt-get clean
 
-install Adafruit WebIDE (https://learn.adafruit.com/webide/installation)
-
 Backup your SD card with Win32DiskImager (for windows) or similar if you are on a different platform. This will save you a lot of time if you want a clean install when the next beta is out
 
 install needed packages for blueZ:
 
-sudo apt-get install libglib2.0-dev
-sudo apt-get install libdbus-1-dev
-sudo apt-get install libudev-dev
-sudo apt-get install automake
-sudo apt-get install libtool
-sudo apt-get install libical-dev
-sudo apt-get install libreadline-dev
+sudo apt-get install libglib2.0-dev libdbus-1-dev libudev-dev automake libtool libical-dev libreadline-dev libjson-glib-1.0-0
 
 Install BlueZ:
 git clone git://git.kernel.org/pub/scm/bluetooth/bluez.git
@@ -78,6 +70,9 @@ This will change based on the release - go and grab the newest link from the rel
 sudo tar -zxvf fliclib-linux.tar.gz
 
 Check your architecture with uname -m and cd into the corresponding directory.
+
+Install depedencies of daemon:
+sudo apt-get install libjson-glib-1.0-0 libsoup2.4-1
 
 sudo ./daemon -l -f flic.sqlite3
 
